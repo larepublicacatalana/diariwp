@@ -29,7 +29,7 @@ define('DB_USER', 'diariwp');
 define('DB_PASSWORD', 'diariwp');
 
 /** MySQL hostname */
-define('DB_HOST', 'mysqlmaster.elpunt.local');
+define('DB_HOST', 'localhost');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8mb4');
