@@ -1700,3 +1700,16 @@ object {
 .front-page-top-area .widget-inner-wrapper {
 	max-width: inherit;
 }
+
+/* rbuch 2017 */
+.front-page-top-area .widget-inner-wrapper,
+.ngg-widget.entry-content {
+	max-width: inherit;
+}
+.grid-wrapper > .hentry > .entry-inner .article-image a {
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+
+

@@ -40,7 +40,25 @@
 	<?php else : ?>
 		
 		<div class="entry-inner">
-		
+			
+			<?php 
+				if ( has_post_thumbnail() ) :
+					echo '<div class="article-image">';
+					echo '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">';
+					
+					/*
+					* The default image sizes of WordPress are “thumbnail”, “medium”, “large” and “full” 
+					* (the size of the image you uploaded). These image sizes can be configured in 
+					* the WordPress Administration Media panel under Settings > Media.
+					* the_post_thumbnail( 'large' ); // Large resolution (default 640px x 640px max)
+					* the_post_thumbnail( 'full' ); // Full resolution (original size uploaded)
+					* the_post_thumbnail( array(100, 100) ); // Other resolutions
+					*/
+					the_post_thumbnail('');
+					echo '</a></div><!-- .panel-image -->';
+				endif;
+			?>
+
 			<header class="entry-header">
 				<?php
 					the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );

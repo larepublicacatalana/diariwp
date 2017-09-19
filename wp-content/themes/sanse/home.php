@@ -11,6 +11,7 @@ get_header(); ?>
 
 
 	<div id="primary" class="content-area">
+
 		<main id="main" class="site-main" role="main">
 
 		<div id="front-page-top-area" class="front-page-top-area widget-area" role="complementary">
@@ -25,13 +26,13 @@ get_header(); ?>
 					<h1 class="page-title"><?php single_post_title(); ?></h1>
 				</header>
 
-			<?php
+		<?php
 			endif;
-
+			
+			
 			/* Start the Loop */
 			echo '<div class="grid-wrapper">';
 				while ( have_posts() ) : the_post();
-
 					/*
 					* Include the Post-Format-specific template for the content.
 					* If you want to override this in a child theme, then include a file
@@ -50,6 +51,11 @@ get_header(); ?>
 			get_template_part( 'template-parts/content', 'none' );
 
 		endif; ?>
+
+
+
+
+
 
 		<div id="front-page-bottom-area" class="front-page-bottom-area widget-area" role="complementary">
 			<?php dynamic_sidebar( 'front-page-bottom' ); ?>

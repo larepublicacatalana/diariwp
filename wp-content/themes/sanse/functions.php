@@ -68,6 +68,15 @@ function sanse_setup() {
 	) );
 
 	/*
+	* Themes must declare support for the Featured Image function before 
+	* the Featured Image interface will appear on the Edit screen. 
+	* Support is declared by putting the following in your theme’s functions.php file
+	*/
+	add_theme_support( 'post-thumbnails' );
+	/* Set the default Post Thumbnail size by cropping the image from the center: */
+	set_post_thumbnail_size( 500, 500, array( 'center', 'center') );
+
+	/*
 	 * This theme styles the visual editor to resemble the theme style,
 	 * specifically font, colors, icons, and column width.
 	 */
