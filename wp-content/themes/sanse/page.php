@@ -17,9 +17,11 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			<div id="front-page-top-area" class="front-page-top-area widget-area" role="complementary">
-				<?php dynamic_sidebar( 'front-page-top' ); ?>
-			</div><!-- #front-page-top-area -->
+		<!-- /* BEGIN widget area --------------------- */ -->
+		<div id="front-page-top-area" class="front-page-top-area widget-area" role="complementary">
+			<?php dynamic_sidebar( 'front-page-top' ); ?>
+		</div><!-- #front-page-top-area -->
+		<!-- /* END widget area --------------------- */ -->
 
 			<?php
 			while ( have_posts() ) : the_post();

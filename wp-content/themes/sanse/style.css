@@ -1702,6 +1702,8 @@ object {
 }
 
 /* rbuch 2017 */
+.all-pages-top-area .widget-inner-wrapper,
+.all-pages-bottom-area .widget-inner-wrapper,
 .front-page-top-area .widget-inner-wrapper,
 .ngg-widget.entry-content {
 	max-width: inherit;

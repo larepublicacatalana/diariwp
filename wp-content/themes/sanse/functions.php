@@ -105,6 +105,26 @@ add_action( 'after_setup_theme', 'sanse_content_width', 0 );
 function sanse_widgets_init() {
 
 	register_sidebar( array(
+		'name'          => esc_html__( 'All pages widget area top', 'sanse' ),
+		'id'            => 'all-pages-top',
+		'description'   => esc_html__( 'Add widgets here for All Pages top templates.', 'sanse' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="widget-inner-wrapper">',
+		'after_widget'  => '</div></section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'All pages widget area bottom', 'sanse' ),
+		'id'            => 'all-pages-bottom',
+		'description'   => esc_html__( 'Add widgets here for All Pages bottom templates.', 'sanse' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="widget-inner-wrapper">',
+		'after_widget'  => '</div></section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
 		'name'          => esc_html__( 'Front Page widget area top', 'sanse' ),
 		'id'            => 'front-page-top',
 		'description'   => esc_html__( 'Add widgets here for Front Page template.', 'sanse' ),
@@ -118,6 +138,36 @@ function sanse_widgets_init() {
 		'name'          => esc_html__( 'Front Page widget area bottom', 'sanse' ),
 		'id'            => 'front-page-bottom',
 		'description'   => esc_html__( 'Add widgets here for Front Page template.', 'sanse' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="widget-inner-wrapper">',
+		'after_widget'  => '</div></section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Post page widget area top', 'sanse' ),
+		'id'            => 'post-page-top',
+		'description'   => esc_html__( 'Add widgets here for post page top templates.', 'sanse' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="widget-inner-wrapper">',
+		'after_widget'  => '</div></section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Post page widget area middle', 'sanse' ),
+		'id'            => 'post-page-middle',
+		'description'   => esc_html__( 'Add widgets here for post page middle templates.', 'sanse' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="widget-inner-wrapper">',
+		'after_widget'  => '</div></section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Post page widget area bottom', 'sanse' ),
+		'id'            => 'post-page-bottom',
+		'description'   => esc_html__( 'Add widgets here for post page bottom templates.', 'sanse' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="widget-inner-wrapper">',
 		'after_widget'  => '</div></section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -153,7 +203,6 @@ function sanse_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
-
 
 }
 add_action( 'widgets_init', 'sanse_widgets_init' );

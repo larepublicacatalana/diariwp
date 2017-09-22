@@ -12,6 +12,12 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
+		<!-- /* BEGIN widget area POST PAGE TOP --------------------- */ -->
+		<div id="post-page-top-area" class="post-page-top-area widget-area" role="complementary">
+			<?php dynamic_sidebar( 'post-page-top' ); ?>
+		</div><!-- #front-page-top-area -->
+		<!-- /* END widget area --------------------- */ -->
+
 		<?php
 		while ( have_posts() ) : the_post();
 
@@ -27,6 +33,13 @@ get_header(); ?>
 					'<span class="post-title">%title</span>',
 			) );
 
+?>
+			<!-- /* BEGIN widget area POST PAGE TOP --------------------- */ -->
+			<div id="post-page-middle-area" class="post-page-middle-area widget-area" role="complementary">
+				<?php dynamic_sidebar( 'post-page-middle' ); ?>
+			</div><!-- #front-page-top-area -->
+			<!-- /* END widget area --------------------- */ -->
+<?php
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :
 				comments_template();
@@ -34,6 +47,12 @@ get_header(); ?>
 
 		endwhile; // End of the loop.
 		?>
+
+		<!-- /* BEGIN widget area POST PAGE BOTTOM --------------------- */ -->
+		<div id="post-page-bottom-area" class="post-page-bottom-area widget-area" role="complementary">
+			<?php dynamic_sidebar( 'post-page-bottom' ); ?>
+		</div><!-- #front-page-top-area -->
+		<!-- /* END widget area --------------------- */ -->
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

@@ -14,12 +14,22 @@ get_header(); ?>
 
 		<main id="main" class="site-main" role="main">
 
+		<!-- /* BEGIN widget area ALL PAGES TOP --------------------- */ -->
+		<div id="all-pages-top-area" class="all-pages-top-area widget-area" role="complementary">
+			<?php dynamic_sidebar( 'all-pages-top' ); ?>
+		</div><!-- #front-page-top-area -->
+		<!-- /* END widget area --------------------- */ -->
+
+		<!-- /* BEGIN widget area --------------------- */ -->
 		<div id="front-page-top-area" class="front-page-top-area widget-area" role="complementary">
 			<?php dynamic_sidebar( 'front-page-top' ); ?>
 		</div><!-- #front-page-top-area -->
-		
+		<!-- /* END widget area --------------------- */ -->
+	
 		<?php
-		if ( have_posts() ) :
+		/* BEGIN POST LIST */
+		/* The next if was desactivated by argument 1==2. Remove the second argument for activate it again */
+		if ( have_posts() && 1==2 ) :
 
 			if ( is_home() && ! is_front_page() ) : ?>
 				<header class="page-header">
@@ -28,7 +38,6 @@ get_header(); ?>
 
 		<?php
 			endif;
-			
 			
 			/* Start the Loop */
 			echo '<div class="grid-wrapper">';
@@ -47,19 +56,24 @@ get_header(); ?>
 			sanse_posts_pagination();
 
 		else :
+			/* Remove double slash if you want to activate the post search service */
+			//get_template_part( 'template-parts/content', 'none' );
 
-			get_template_part( 'template-parts/content', 'none' );
+		endif;
+		/* END POST LIST */
+		?>
 
-		endif; ?>
-
-
-
-
-
-
+		<!-- /* BEGIN widget area --------------------- */ -->
 		<div id="front-page-bottom-area" class="front-page-bottom-area widget-area" role="complementary">
 			<?php dynamic_sidebar( 'front-page-bottom' ); ?>
 		</div><!-- #front-page-bottom-area -->
+		<!-- /* END widget area --------------------- */ -->
+
+		<!-- /* BEGIN widget area ALL PAGES BOTTOM --------------------- */ -->
+		<div id="all-pages-bottom-area" class="all-pages-bottom-area widget-area" role="complementary">
+			<?php dynamic_sidebar( 'all-pages-bottom' ); ?>
+		</div><!-- #front-page-top-area -->
+		<!-- /* END widget area --------------------- */ -->
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

@@ -12,6 +12,12 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
+		<!-- /* BEGIN widget area ALL PAGES TOP --------------------- */ -->
+		<div id="all-pages-top-area" class="all-pages-top-area widget-area" role="complementary">
+			<?php dynamic_sidebar( 'all-pages-top' ); ?>
+		</div><!-- #front-page-top-area -->
+		<!-- /* END widget area --------------------- */ -->
+
 		<?php
 		if ( have_posts() ) : ?>
 
@@ -45,6 +51,12 @@ get_header(); ?>
 			get_template_part( 'template-parts/content', 'none' );
 
 		endif; ?>
+
+		<!-- /* BEGIN widget area ALL PAGES BOTTOM --------------------- */ -->
+		<div id="all-pages-bottom-area" class="all-pages-bottom-area widget-area" role="complementary">
+			<?php dynamic_sidebar( 'all-pages-bottom' ); ?>
+		</div><!-- #front-page-top-area -->
+		<!-- /* END widget area --------------------- */ -->
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
